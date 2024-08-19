@@ -1,2 +1,2 @@
 # Greeting Card Generator
-A greeting card generating program!
+A greeting card generating program! (Admin)
