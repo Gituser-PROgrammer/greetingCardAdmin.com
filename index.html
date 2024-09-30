@@ -6,7 +6,7 @@
     <meta name="author" content="Sai Sriyan" />
     <meta name="description" content="A greeting card generator program." />
     <link rel="shortcut icon" href="https://res.cloudinary.com/dxcywxeqq/image/upload/v1722855215/rax07ycokzd2rneo24bc.png">
-    <title>Greeting Card Generator Admin</title>
+    <title>Greeting Card Generator</title>
     <style>
       .icon {
         width: 60px;
@@ -36,6 +36,7 @@
         border: 2px solid whitesmoke;
         display: none;
         padding-bottom: 20px;
+        /* width: 100px; */
       }
       h1{
         text-decoration: underline;
@@ -70,6 +71,9 @@
       Heading Color:
       <input type="color" class="headColor" />
       <br>
+      Width(in pixels): 
+      <input type="number" class="pixelWidth" min="500" max="1999"/>
+      <br>
       Content Color: 
       <input type="color" class="contentColor" />
       <br>
@@ -87,6 +91,7 @@
         Generate Greeting Card
       </button>
       <br /><br />
+      <center>
       <div class="greetingCard">
         <center>
           <p>
@@ -98,15 +103,17 @@
           <span class="name">Name</span>
         </center>
       </div>
+    </center>
     </main>
     <hr />
     <footer>&copy;Copyright, Sai Sriyan Nakka. 
-      <br />Version 1.81</footer>
+      <br />Version 1.94</footer>
     <script>
       function generateGreetingCard() {
         //values:
         let bgColor = document.querySelector(".bgcolor").value;
         let headColor = document.querySelector(".headColor").value;
+        let pixelWidth = document.querySelector(".pixelWidth").value;
         let contentColor = document.querySelector(".contentColor").value;
         let nameColor = document.querySelector(".nameColor").value;
         let header = document.querySelector(".header").value;
@@ -116,6 +123,7 @@
 
         console.log(bgColor);
         console.log(headColor);
+        console.log(pixelWidth);
         console.log(contentColor);
         console.log(nameColor);
         console.log(header);
@@ -134,6 +142,7 @@
         //printing the values:
         greetingCardDiv.style.display = "block";
         greetingCardDiv.style.backgroundColor = bgColor;
+        greetingCardDiv.style.width = `${pixelWidth}px`;
         heading.style.color = headColor;
         heading.innerHTML = header;
         content1.style.color = contentColor;
